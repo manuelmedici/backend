@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql
+    restart: always
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./mysql-init.sql:/tmp/mysql-init.sql
+    ports:
+      - 3007:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: poljak
+      
+
